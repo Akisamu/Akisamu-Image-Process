@@ -34,7 +34,7 @@ def recognition(imgs: list) -> list:
         result = bw_scanner(img)
         pytesseract.pytesseract.tesseract_cmd = r'W:\Program Files\Tesseract-OCR\tesseract.exe'
         text = pytesseract.image_to_string(result)
-        if len(re.findall(r'\d{18}', text)) = 0:
+        if len(re.findall(r'\d{18}', text)) == 0:
             NumList.append('该组识别失败')
             continue
         # 更改正则以更改过滤规则
