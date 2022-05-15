@@ -1,5 +1,4 @@
 import re
-
 import cv2 as cv
 import numpy as np
 from skimage.filters import threshold_local
@@ -35,6 +34,10 @@ def recognition(imgs: list) -> list:
         result = bw_scanner(img)
         pytesseract.pytesseract.tesseract_cmd = r'W:\Program Files\Tesseract-OCR\tesseract.exe'
         text = pytesseract.image_to_string(result)
+        if len(re.findall(r'\d{18}', text)) = 0:
+            NumList.append('该组识别失败')
+            continue
+        # 更改正则以更改过滤规则
         NumList.append(re.findall(r'\d{18}', text)[0])
     return NumList
 
