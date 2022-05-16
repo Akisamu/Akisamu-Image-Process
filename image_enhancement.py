@@ -10,13 +10,12 @@ import matplotlib.pylab as plt
 from utils import *
 
 
-def enhancement_test(paths: list) -> None:
+def enhancement_test(imgs: list) -> None:
 
     time = 1
     ImgList = []
 
-    for path in paths:
-        img = cv.imread(path)
+    for img in imgs:
 
         # 均值模糊 ,去椒盐噪声
         res1 = cv.blur(img, (5, 5))

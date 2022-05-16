@@ -106,7 +106,7 @@ def segmentation_test(imgs) -> None:
 
         scanned = wrap_perspective(original.copy(), contour_to_rect(receipt_contour, resize_ratio))
 
-        print_add(scanned)
+        print_add(gray)
     print_imgs('Cutted')
 
 
